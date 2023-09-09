@@ -43,27 +43,30 @@ public class Store {
 		String userInput = scanner.nextLine();
 		
 		if (userInput.equals("yes")){
-			System.out.println("Welcome!");
+			store.inventory.accessCart();
 		} else {
 			store.endShopping();
 		}
 		
-		System.out.println("Would you like to view the menu?");
-		userInput = scanner.nextLine();
-		
-		while (userInput.equals("yes")) {
-			store.inventory.displayMenu();
-			System.out.println("\nWould you like to buy something? yes or no:");
-			userInput = scanner.nextLine();
-			
-			if (userInput.equals("yes")){
-				store.inventory.accessCart();
-			}
+		store.endShopping();
 		
 		}
 		
-		store.endShopping();
-		
-	}
-	
+//		System.out.println("Would you like to view the menu?");
+//		userInput = scanner.nextLine();
+//		
+//		while (userInput.equals("yes")) {
+//			store.inventory.displayMenu();
+//			System.out.println("\nWould you like to buy something? yes or no:");
+//			userInput = scanner.nextLine();
+//			
+//			if (userInput.equals("yes")){
+//				store.inventory.accessCart();
+//			}
+//		
+//		}
+//		
+//		store.endShopping();
+//		
+
 }
