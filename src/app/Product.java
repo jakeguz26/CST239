@@ -6,12 +6,14 @@ public class Product {
 	String description;
 	double price; 
 	int quantity; 
+	private int index = 0;
 	
-	public Product() {
+	public Product(int quantity) {
 		this.name = "heart container";
 		this.description = "a heart container that refills your life meter by 1";
 		this.price = 12.99d;
-		this.quantity = 10;	
+		this.quantity = quantity;
+		this.index += 1;
 	}
 
 	public String getName() {
@@ -42,8 +44,8 @@ public class Product {
 		return quantity;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setQuantity(int decreaseAmount) {
+		this.quantity -= decreaseAmount;
 	}
 	
 }

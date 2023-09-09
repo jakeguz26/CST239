@@ -48,16 +48,21 @@ public class Store {
 			store.endShopping();
 		}
 		
-		ShoppingCart cart = new ShoppingCart();
-		
 		System.out.println("Would you like to view the menu?");
 		userInput = scanner.nextLine();
 		
-		if (userInput.equals("yes")){
+		while (userInput.equals("yes")) {
 			store.inventory.displayMenu();
-		} else {
-			store.endShopping();
+			System.out.println("\nWould you like to buy something? yes or no:");
+			userInput = scanner.nextLine();
+			
+			if (userInput.equals("yes")){
+				store.inventory.accessCart();
+			}
+		
 		}
+		
+		store.endShopping();
 		
 	}
 	
