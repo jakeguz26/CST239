@@ -39,11 +39,6 @@ public class ShoppingCart {
 			System.out.println("item removed!");
 		} else
 			System.out.println("your cart is empty!");
-		
 	}
-	
-	public void checkOut() {	
-		
-	}
-	
+
 }

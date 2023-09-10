@@ -48,4 +48,8 @@ public class Product {
 		this.quantity -= decreaseAmount;
 	}
 	
+	public void increaseQuantity(int increaseAmount) {
+		this.quantity += increaseAmount;
+	}
+	
 }

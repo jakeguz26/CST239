@@ -51,7 +51,8 @@ public class Inventory {
 				"Type 2 for ADD ITEM\n" +
 				"Type 3 for VIEW CART\n" +
 				"Type 4 for REMOVE ITEM\n" +
-				"Type 5 for CHECKOUT");
+				"Type 5 for CHECKOUT\n" +
+				"Type 6 for EXIT");
 			
 			Scanner scanner = new Scanner(System.in);
 			int userInput = scanner.nextInt();
@@ -70,7 +71,9 @@ public class Inventory {
 					removeItem();
 					break;
 				case 5:
-					System.out.println("I'll ring you up! Thanks for coming!");
+					System.out.println("I'll ring you up!");
+					return;
+				case 6:
 					return;
 				default:
 					System.out.println("\ninvalid input");
@@ -97,12 +100,12 @@ public class Inventory {
 			System.out.println("Type " + i + " for " + productList.get(i).getName() + " ");
 		}
 	
-	Scanner scanner = new Scanner(System.in);
-	int userInput = scanner.nextInt();
-	cart.removeItem(userInput);
-	
+		Scanner scanner = new Scanner(System.in);
+		int userInput = scanner.nextInt();
+		cart.cartItems.get(userInput).increaseQuantity(1);
+		cart.removeItem(userInput);
+		
 	}
-	
 	
 	public void decreaseQuantity(Product item) {
 		item.setQuantity(1);
