@@ -55,18 +55,26 @@ public class Store {
 		Store store = new Store("Jake's Store");
 		Scanner scanner = new Scanner(System.in);
 		
+		boolean stay = true;
+		
 		System.out.println("Welcome to " + store.getStore_name() + "!!" );
 		System.out.println("Would you like to shop? Enter yes or no:");
-		String userInput = scanner.nextLine();
 		
-		if (userInput.equals("yes")){
-			store.inventory.accessCart();
-		} else {
-			store.endShopping();
+		while (stay == true) {
+			String userInput = scanner.nextLine();
+			
+			if (userInput.equals("yes")){
+				store.inventory.accessCart();
+				stay = false;
+			} else if (userInput.equals("no")) {
+				store.endShopping();
+			} else {
+				System.out.println("Invalid input. Please enter 'yes' or 'no':\n");
+			}
 		}
 		
 		store.endShopping();
 		
-		}
+	}
 			
 }
