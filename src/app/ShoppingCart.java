@@ -1,14 +1,15 @@
 package app;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
-
 import java.util.Scanner;
+
 /**
  * ShoppingCart class that will be used to create cart object that track user's product choices
  */
 public class ShoppingCart {
 	
 	ArrayList<Product> cartItems;
+	
 	/**
 	 * Constructor for ShoppingCart class
 	 * Instantiates ArrayList object and assigns to cartItems field
@@ -16,6 +17,7 @@ public class ShoppingCart {
 	public ShoppingCart() {
 		cartItems = new ArrayList<>();
 	}
+	
 	/**
 	 * Getter for value associated with cartItems field
 	 * @return ArrayObject that contains Product elements
@@ -23,6 +25,7 @@ public class ShoppingCart {
 	public ArrayList getCartItems() {
 		return cartItems;
 	}
+	
 	/** Adds Product elements to cartItems field
 	 * @param item Instance of Product that will be added to cartItems field
 	 */
@@ -31,6 +34,7 @@ public class ShoppingCart {
 		System.out.println("\n" + item.getName() + " added!!!");
 		this.viewShoppingCart();
 	}
+	
 	/**
 	 * Displays current contents of cartItems field
 	 */
@@ -50,6 +54,11 @@ public class ShoppingCart {
 		
 	}
 	
+	/**
+	 * Adds up all the prices of items that are currently in the cart
+	 * Formats the returned string to only display 2 numbers after the decimal
+	 * @return a String that represents the customer's total bill
+	 */
 	public String calculateTotal() {
 		
 		DecimalFormat df = new DecimalFormat("0.00");

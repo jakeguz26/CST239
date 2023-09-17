@@ -1,6 +1,7 @@
 package app;
 import java.util.*;
 import java.util.Scanner;
+
 /**
  * Inventory class
  * Tracks items available for purchase and handles some programming flow
@@ -9,6 +10,7 @@ public class Inventory {
 	
 	ArrayList<Product> productList;
 	ShoppingCart cart;
+	
 	/**
 	 * Constructor method for instances of Inventory class 
 	 * Instantiates ArrayList object to be used as data-structure that holds Product instances
@@ -18,8 +20,7 @@ public class Inventory {
 	 */
 	public Inventory() {
 		productList = new ArrayList<>();
-		// add products to inventory
-		// need 2 types of weapons, 2 types of armor and one health
+	
 		Health heartContainer = new Health();
 		productList.add(heartContainer);
 		
@@ -37,6 +38,7 @@ public class Inventory {
 		
 		cart = new ShoppingCart();
 	}
+	
 	/**
 	 * Getter method for our 'productList' field
 	 * @return ArrayObject containing our products that are in stock
@@ -44,6 +46,7 @@ public class Inventory {
 	public ArrayList<Product> getProductList() {
 		return productList;
 	}
+	
 	/**
 	 * Getter method for our 'cart' field
 	 * @return instance of ShoppingCart that is associated with 'cart' field
@@ -51,6 +54,7 @@ public class Inventory {
 	public ShoppingCart getCart() {
 		return cart;
 	}
+	
 	/**
 	 * Displays menu with items available for purchase
 	 */
@@ -64,6 +68,7 @@ public class Inventory {
 					"\n" + "- " + productList.get(i).getQuantity());
 		}
 	}
+	
 	/**
 	 * Handles programming flow for shopper's options in the store
 	 * Uses while loop to continuously print shoppers' store options
@@ -121,10 +126,12 @@ public class Inventory {
 			}
 		}
 	}
+	
 	/**
 	 * Prints list of potential items
 	 * Instantiates an instance of Scanner to track user input
 	 * Calls addItem() method from ShoppingCart class on 'cart' field
+	 * Uses 'try' and 'catch' blocks to account for invalid input
 	 * Calls decreaseQuantity() on item that has been selected
 	 */
 	public void addItem() {
@@ -164,14 +171,18 @@ public class Inventory {
 	
 	/**
 	 * Gives user their current cart items and asks what they would like to remove from cart
+	 * Uses various loops and 'try'/'catch' blocks to check user input and re-display menu
 	 */
 	public void removeItem() {
+		
 		boolean stay = true;
 		boolean stayTwo =  true;
 		int userInput = 0;
 		
 		while(stay == true) {
+			
 			while(stayTwo == true) {
+				
 				if (cart.getCartItems().size() > 0) {
 					System.out.println("\nWhat item would you like to remove?\n");
 					for (int i = 0; i < cart.cartItems.size(); i++) {
@@ -186,6 +197,7 @@ public class Inventory {
 					} catch (InputMismatchException e) {
 						System.out.println("\nInvalid input.");
 					}
+					
 				} else {
 					System.out.println("\nYour cart is empty!");
 					stayTwo = false;
@@ -206,6 +218,7 @@ public class Inventory {
 		}
 			
 	}
+	
 	/**
 	 * Decreases 'quantity' field of product by 1
 	 * @param specific instance of Product class that will have quantity field decrease by 1

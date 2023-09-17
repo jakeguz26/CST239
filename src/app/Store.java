@@ -8,6 +8,7 @@ public class Store {
 
 	String storeName;
 	Inventory inventory;
+	
 	/**
 	 * Constructor method for instances of Store
 	 * @param name string argument that gets passed to our constructor
@@ -17,6 +18,7 @@ public class Store {
 		this.storeName = name;
 		this.inventory = new Inventory();
 	}
+	
 	/**
 	 * Getter method for value associated with "storeName" field
 	 * @return the string that represents the "storeName" field
@@ -24,6 +26,7 @@ public class Store {
 	public String getStore_name() {
 		return storeName;
 	}
+	
 	/**
 	 * Setter method to set the value associated with "storeName" field
 	 * @param store_name String value that will be passed to "storeName" field as the new value
@@ -31,6 +34,7 @@ public class Store {
 	public void setStore_name(String store_name) {
 		this.storeName = store_name;
 	}	
+	
 	/**
 	 * Getter method that returns the inventory object that is associated with our 'inventory' field
 	 * @return inventory object that is associated with the 'inventory' field
@@ -38,6 +42,7 @@ public class Store {
 	public Inventory getInventory() {
 		return inventory;
 	}
+	
 	/**
 	 * Terminates the program and prints 'good bye' message
 	 */
@@ -45,6 +50,7 @@ public class Store {
 		System.out.println("Thanks for coming! Come back soon!");
 		int exitStatus = 0;
         System.exit(exitStatus);
+        
 	}
 	/**
 	 * Main method that handles the programming flow of the application
@@ -75,6 +81,5 @@ public class Store {
 		
 		store.endShopping();
 		
-	}
-			
+	}		
 }
