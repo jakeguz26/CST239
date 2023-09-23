@@ -85,7 +85,8 @@ public class Inventory {
 				"Type 3 for VIEW CART\n" +
 				"Type 4 for REMOVE ITEM\n" +
 				"Type 5 for CHECKOUT\n" +
-				"Type 6 for EXIT");
+				"Type 6 for EMPTY CART\n" +
+				"Type 7 for EXIT");
 			
 			Scanner scanner = new Scanner(System.in);
 			int userInput = 1;
@@ -93,7 +94,7 @@ public class Inventory {
 			try {
 				userInput = scanner.nextInt();
 			} catch (InputMismatchException e) {
-				System.out.println("\nInvalid input. Please enter a number 1 through 6.");
+				System.out.println("\nInvalid input. Please enter a number 1 through 7.");
 				accessCart();
 			}
 			
@@ -120,9 +121,13 @@ public class Inventory {
 						break;
 					}
 				case 6:
+					System.out.println("Let's start all over!");
+					cart.removeAllItems();
+					break;
+				case 7:
 					return;
 				default:
-					System.out.println("\nInvalid input. Please enter a number 1 through 6.");
+					System.out.println("\nInvalid input. Please enter a number 1 through 7.");
 			}
 		}
 	}

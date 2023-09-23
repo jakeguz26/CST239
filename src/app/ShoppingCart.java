@@ -2,6 +2,7 @@ package app;
 import java.util.ArrayList;
 import java.text.DecimalFormat;
 import java.util.Scanner;
+import java.util.Iterator;
 
 /**
  * ShoppingCart class that will be used to create cart object that track user's product choices
@@ -84,4 +85,13 @@ public class ShoppingCart {
 			System.out.println("your cart is empty!");
 	}
 
+	public void removeAllItems() {
+		Iterator<Product> iterator = cartItems.iterator();
+		while(iterator.hasNext()) {
+			Product product = iterator.next();
+			product.increaseQuantity(1);
+			iterator.remove();
+		}
+	}
+	
 }

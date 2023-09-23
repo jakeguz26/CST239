@@ -1,7 +1,7 @@
 package app;
 
 /**
- * Heal class
+ * Health class
  * Inherits from Product superclass
  */
 public class Health extends Product {

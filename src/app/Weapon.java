@@ -4,7 +4,7 @@ package app;
  * Weapon superclass
  * Inherits from Product
  */
-public class Weapon extends Product {
+public class Weapon extends Product implements Comparable<Weapon> {
 
 	/**
 	 * Constructor for Weapon
@@ -12,5 +12,10 @@ public class Weapon extends Product {
 	 */
 	public Weapon() {
 		super();	
+	}
+	
+	@Override
+	public int compareTo(Weapon other) {
+		return this.name.compareToIgnoreCase(other.name);
 	}
 }
