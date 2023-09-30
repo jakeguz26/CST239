@@ -1,4 +1,5 @@
 package app;
+import java.io.*;
 
 /**
  * Health class
@@ -17,5 +18,8 @@ public class Health extends Product {
 		this.description = "Refills health level by 1";
 		this.price = 12.99d;
 		this.quantity = 10;
+		
+		readFile("health.txt");
+		
 	}
 }

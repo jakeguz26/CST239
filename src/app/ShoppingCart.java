@@ -85,6 +85,10 @@ public class ShoppingCart {
 			System.out.println("your cart is empty!");
 	}
 
+	/**
+	 * Removes all items from cart
+	 * Repopulates quantity field
+	 */
 	public void removeAllItems() {
 		Iterator<Product> iterator = cartItems.iterator();
 		while(iterator.hasNext()) {

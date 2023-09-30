@@ -1,5 +1,10 @@
 package app;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * Product class that will represent products to be sold in store
  */
@@ -70,6 +75,39 @@ public class Product {
 	 */
 	public void increaseQuantity(int increaseAmount) {
 		this.quantity += increaseAmount;
+	}
+	
+	/**
+	 * Reads information from file that is passed in
+	 * Assigns information to the proper fields for each object
+	 * @param inFile String that represents a txt file
+	 */
+	public void readFile(String inFile) {
+	
+		BufferedReader in = null;
+		
+		try 
+		{
+			in = new BufferedReader(new FileReader(inFile));
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		try 
+		{
+			String line;
+			while((line = in.readLine()) != null) {
+				String[] tokens = line.split("\\|");
+				System.out.println(String.format("%s %s %s %s", tokens[0], tokens[1], tokens[2], tokens[3]));
+				this.name = tokens[0];
+				this.description = tokens[1];
+			}
+		} 	catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} 	catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }
