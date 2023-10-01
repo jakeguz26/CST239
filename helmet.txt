@@ -1,0 +1,1 @@
+Helmet|A solid steel helmet that protects your head.|4.99|10

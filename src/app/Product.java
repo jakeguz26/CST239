@@ -84,26 +84,19 @@ public class Product {
 	 */
 	public void readFile(String inFile) {
 	
-		BufferedReader in = null;
-		
-		try 
-		{
-			in = new BufferedReader(new FileReader(inFile));
+		try (BufferedReader in = new BufferedReader(new FileReader(inFile));){
 			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
-		
-		try 
-		{
 			String line;
 			while((line = in.readLine()) != null) {
 				String[] tokens = line.split("\\|");
-				System.out.println(String.format("%s %s %s %s", tokens[0], tokens[1], tokens[2], tokens[3]));
+				// Uses the elements we've parsed into tokens to assign to the fields of each Product instance
 				this.name = tokens[0];
 				this.description = tokens[1];
+				this.price = Double.parseDouble(tokens[2]);
+				this.quantity = Integer.parseInt(tokens[3]);
 			}
-		} 	catch (FileNotFoundException e) {
+
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} 	catch (IOException e) {
 			e.printStackTrace();
