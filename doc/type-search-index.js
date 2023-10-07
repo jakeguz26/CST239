@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"app","l":"Weapon"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"app","l":"Armor"},{"p":"app","l":"ChestArmor"},{"p":"app","l":"Health"},{"p":"app","l":"Helmet"},{"p":"app","l":"Inventory"},{"p":"app","l":"Lightsaber"},{"p":"app","l":"MasterSword"},{"p":"app","l":"Product"},{"p":"app","l":"ShoppingCart"},{"p":"app","l":"Store"},{"p":"app","l":"Weapon"}];updateSearchResults();

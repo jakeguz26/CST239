@@ -23,7 +23,7 @@ public class ShoppingCart {
 	 * Getter for value associated with cartItems field
 	 * @return ArrayObject that contains Product elements
 	 */
-	public ArrayList getCartItems() {
+	public ArrayList<Product> getCartItems() {
 		return cartItems;
 	}
 	
@@ -78,6 +78,7 @@ public class ShoppingCart {
 	 * @param index integer that will represent index of Product element to be removed from cartItems field
 	 */
 	public void removeItem(int index) {
+		
 		if (cartItems.size() > 0) {
 			cartItems.remove(index);
 			System.out.println("item removed!");
@@ -90,6 +91,7 @@ public class ShoppingCart {
 	 * Repopulates quantity field
 	 */
 	public void removeAllItems() {
+		
 		Iterator<Product> iterator = cartItems.iterator();
 		while(iterator.hasNext()) {
 			Product product = iterator.next();

@@ -4,11 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.*;
 
 /**
  * Product class that will represent products to be sold in store
  */
-public class Product {
+public class Product implements Comparable<Product>{
 
 	String name;
 	String description;
@@ -102,5 +103,23 @@ public class Product {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Implementation of compareTo from Comparable interface
+	 * Has 4 options:
+	 * Sort in ascending or descending order by 'name'
+	 * Sort in ascending or descending order by 'price'
+	 */
+	public int compareTo(Product other) {
+		
+		// ***** SORT BASED ON NAME ******
+		return this.name.compareTo(other.name);
+		// return other.name.compareTo(this.name);
+	
+		// ***** SORT BASED ON PRICE ******
+		//return Double.compare(this.price, other.price);
+		//return Double.compare(other.price, this.price);
+	}
+	
 	
 }

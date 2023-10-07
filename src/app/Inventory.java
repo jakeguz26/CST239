@@ -56,9 +56,20 @@ public class Inventory {
 	}
 	
 	/**
+	 * Invokes sort() with the productList field as argument
+	 * Sorts the elements in the productList based on the criteria of compareTo() implemented in Product class
+	 */
+	public void sortItems(){
+		Collections.sort(productList);
+	}
+	
+	/**
+	 * Sorts items in productList field
 	 * Displays menu with items available for purchase
 	 */
 	public void displayMenu() {
+		
+		this.sortItems();
 		System.out.println("Check out our menu!");
 		
 		for (int i = 0; i < productList.size(); i++) {
@@ -68,7 +79,7 @@ public class Inventory {
 					"\n" + "- " + productList.get(i).getQuantity());
 		}
 	}
-	
+		
 	/**
 	 * Handles programming flow for shopper's options in the store
 	 * Uses while loop to continuously print shoppers' store options
