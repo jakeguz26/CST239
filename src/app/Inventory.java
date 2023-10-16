@@ -1,5 +1,7 @@
 package app;
 import java.util.*;
+import java.io.IOException;
+import java.net.*;
 import java.util.Scanner;
 
 /**
@@ -10,6 +12,8 @@ public class Inventory {
 	
 	ArrayList<Product> productList;
 	ShoppingCart cart;
+	AdminThread admin;
+	AdminThreadTwo adminTwo;
 	
 	/**
 	 * Constructor method for instances of Inventory class 
@@ -37,6 +41,12 @@ public class Inventory {
 		productList.add(helmet);
 		
 		cart = new ShoppingCart();
+		
+		admin = new AdminThread(this);
+		admin.start();
+		
+		adminTwo = new AdminThreadTwo(this);
+		adminTwo.start();
 	}
 	
 	/**
@@ -136,6 +146,7 @@ public class Inventory {
 					cart.removeAllItems();
 					break;
 				case 7:
+					admin.run = false;
 					return;
 				default:
 					System.out.println("\nInvalid input. Please enter a number 1 through 7.");

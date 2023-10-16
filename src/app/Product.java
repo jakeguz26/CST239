@@ -29,6 +29,15 @@ public class Product implements Comparable<Product>{
 		this.index += 1;
 	}
 	
+	public Product(String line) {
+		String[] tokens = line.split("\\|");
+		// Uses the elements we've parsed into tokens to assign to the fields of each Product instance
+		this.name = tokens[0];
+		this.description = tokens[1];
+		this.price = Double.parseDouble(tokens[2]);
+		this.quantity = Integer.parseInt(tokens[3]);
+	}
+	
 	/**
 	 * Getter for value associated with name field
 	 * @return String that represents name field
