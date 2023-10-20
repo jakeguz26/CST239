@@ -23,7 +23,7 @@ public class Store {
 	 * Getter method for value associated with "storeName" field
 	 * @return the string that represents the "storeName" field
 	 */
-	public String getStore_name() {
+	public String getStoreName() {
 		return storeName;
 	}
 	
@@ -63,7 +63,7 @@ public class Store {
 		
 		boolean stay = true;
 		
-		System.out.println("Welcome to " + store.getStore_name() + "!!" );
+		System.out.println("Welcome to " + store.getStoreName() + "!!" );
 		System.out.println("Would you like to shop? Enter yes or no:");
 		
 		while (stay == true) {
