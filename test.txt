@@ -1,0 +1,1 @@
+Friend|A companion that automatically raises health level|65.99|1
