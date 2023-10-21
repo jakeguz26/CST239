@@ -64,7 +64,13 @@ public class ProductTest {
 
 	@Test
 	public void testCompareTo() {
-		fail("Not yet implemented");
+		
+	    Product product1 = new Product("Apple|Apple for eating|10.99|1|");
+	    Product product2 = new Product("Banana|Banana for eating|10.99|1|");
+	    
+
+	    int result = product1.compareTo(product2);
+	    assertTrue(result < 0);
 	}
 
 }

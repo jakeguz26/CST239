@@ -136,6 +136,7 @@ public class Inventory {
 					if (cart.cartItems.size() > 0) {
 						System.out.println("\nI'll ring you up!");
 						System.out.println("Your total is: $" + cart.calculateTotal());
+						admin.shutDown();
 						return;
 					} else {
 						cart.viewShoppingCart();
@@ -146,7 +147,7 @@ public class Inventory {
 					cart.removeAllItems();
 					break;
 				case 7:
-					admin.run = false;
+					admin.shutDown();
 					return;
 				default:
 					System.out.println("\nInvalid input. Please enter a number 1 through 7.");

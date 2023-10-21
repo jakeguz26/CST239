@@ -15,18 +15,12 @@ public class Product implements Comparable<Product>{
 	String description;
 	double price; 	
 	int quantity; 
-	private int index = 0;
 		
 	/**
 	 * Constructor for instantiating objects of Product class
 	 * @param quantity integer that will be passed to constructor and will be assigned to quantity field
 	 */
 	public Product() {
-		this.name = name;
-		this.description = description;
-		this.price = price;
-		this.quantity = quantity;
-		this.index += 1;
 	}
 	
 	public Product(String line) {

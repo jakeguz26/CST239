@@ -15,8 +15,6 @@ public class AdminThread extends Thread {
 	private Inventory inventory;
 	protected volatile boolean run = true;
 	
-	private Thread adminTwo;
-	
 	public AdminThread(Inventory inventory) {
 		
 		this.inventory = inventory;
@@ -35,7 +33,6 @@ public class AdminThread extends Thread {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-	
 	}
 	
 	/**
@@ -101,6 +98,7 @@ public class AdminThread extends Thread {
 	public void shutDown() {
 		
 		try {
+			out.println("EXIT");
 			in.close();
 			out.close();
 			clientSocket.close();
